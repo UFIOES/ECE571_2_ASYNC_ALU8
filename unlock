@@ -1,0 +1,11 @@
+#!/usr/bin/perl -w
+
+use strict;
+
+for my $cell (glob("*/")) {
+	for my $view (glob("$cell*/")) {
+		next unless $view =~ /schematic|symbol/;
+		system("rm -fv $view*cdslck*");
+	}
+}
+
