@@ -4,7 +4,7 @@ use strict;
 
 for my $cell (glob("*/")) {
 	for my $view (glob("$cell*/")) {
-		next unless $view =~ /schematic|symbol/;
+		next unless $view =~ /schematic|symbol|layout/;
 		system("rm -fv $view*cdslck*");
 	}
 }
